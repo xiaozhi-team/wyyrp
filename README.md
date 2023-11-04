@@ -1,37 +1,63 @@
-# 网易云随机热评API
+# 网易云随机热评 API
 
 #### 介绍
-请求后输出网易云随机热评
 
-#### 软件架构
-软件架构说明
+网易云随机热评 API
+请求后返回随机热评
 
+#### 建议 PHP 版本
 
-#### 安装教程
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
+建议使用 PHP(7.4)
 
 #### 使用说明
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+直接对 PHP 进行访问即可
 
-#### 参与贡献
+#### 提交参数
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+| 序列号 | 名称 | 必填 | 备注                                                |
+| ------ | ---- | ---- | --------------------------------------------------- |
+| 1      | type | 否   | Type 为 text,返回文本,为 Json,返回 Json 默认为 Json |
+| 2      | text | 否   | 指定歌单 id 获取热评，默认网易云热歌榜              |
 
+#### 返回数据
 
-#### 特技
+| 序列号 | 返回头  | 返回类型 | 备注             |
+| ------ | ------- | -------- | ---------------- |
+| 1      | code    | int      | 状态码           |
+| 2      | text    | string   | 返回提示         |
+| 3      | data    | array    | 返回数据         |
+| 4      | Music   | string   | 歌名             |
+| 5      | name    | string   | 歌手名字         |
+| 6      | Picture | string   | 歌曲封面图片链接 |
+| 7      | Url     | string   | 播放链接         |
+| 8      | Content | string   | 评论内容         |
+| 9      | Nick    | string   | 发表评论的昵称   |
+| 10     | api     | string   | api 系统名称     |
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+#### 返回示例
+
+```
+{
+    "code": 1,
+    "text": "获取成功",
+    "data": {
+        "Music": "遇见你，微风起",
+        "name": "刘大拿",
+        "Picture": "http://p1.music.126.net/Vsulb9zNiRZxpK_YwATIPA==/109951168996300510.jpg",
+        "Url": "http://music.163.com/song/media/outer/url?id=2091638406",
+        "id": 2091638406,
+        "Content": "爱应该让人变得温柔和勇敢。",
+        "Nick": "黄桃不是桃c"
+    },
+    "api": "https://api.4qb.cn/"
+}
+```
+
+#### 问题联系
+
+出现任何问题可提交 Issues
+
+#### API
+
+欢迎各位使用小职 API：[api.4qb.cn](https://api.41b.cn/)
